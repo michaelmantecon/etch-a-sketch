@@ -1,11 +1,14 @@
 body {
     background-color: red;
     color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
-    margin: 50px auto;
+    margin: 20px auto;
     font-size: 4em;
     font-family:Impact, 
     Haettenschweiler, 
@@ -16,12 +19,30 @@ h1 {
 #container {
     display: flex;
     flex-wrap: wrap;
-    margin: auto 20%;
+    margin: 20px auto;
+    width: min(80vmin, 600px);
+    aspect-ratio: 1 / 1;
+    border: 2px solid #272727;
 }
 
 .grid-div {
+    flex-grow: 0;
+    flex-shrink: 0;
     flex-basis: calc(100% / 16);
-    width: 20px;
-    height: 35px;
+    aspect-ratio: 1 / 1;
     background-color: gray;
+}
+
+#button {
+    width: 160px;
+    margin: 20px auto;
+    font-size: 1.2em;
+    font-style: bold;
+    border-radius: 10px;
+}
+
+#button:hover {
+    background-color: gray;
+    cursor: pointer;
+    color: yellow;
 }
