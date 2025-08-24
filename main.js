@@ -32,7 +32,20 @@ colorPixels();
 //button changes the number of pixels 
 document.getElementById("button").addEventListener("click",
     function() {
-        let pixelWidth = prompt("How many pixels wide should the etch-a-sketch be? Enter an answer between 1 and 100!");
+        let pixelWidth;
+        const MAX_LENGTH = 100;
+        do {
+            pixelWidth = prompt("How many pixels wide should the etch-a-sketch be? Enter an answer between 1 and 100!");
+            
+            if (pixelWidth === null) {
+                alert("Input cancelled.");
+                break;
+            }
+
+            if (parseInt(pixelWidth, 10) > MAX_LENGTH) {
+                alert("Input exceeds the maximum length of 100");
+            }
+        } while (pixelWidth === null || parseInt(pixelWidth, 10) > MAX_LENGTH);
         // Removes current etch-a-sketch grid
         const gridToRemove = document.querySelectorAll(".grid-div");
         gridToRemove.forEach(pixel => {
