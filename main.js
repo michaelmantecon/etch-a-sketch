@@ -6,3 +6,14 @@ for (let i = 0; i < 256; i++) {
     newDiv.classList.add("grid-div");
     container.appendChild(newDiv);
 }
+
+// color each "pixel" of the etch-a-sketch with lasting effect
+const pixelToColor = document.querySelectorAll(".grid-div");
+pixelToColor.forEach(pixel => {
+    pixel.addEventListener("mouseover", function() {
+        pixel.style.backgroundColor = "#272727";
+    })
+    pixel.addEventListener("mouseout", function() {
+        pixel.style.backgroundColor = "#272727";
+    })
+})
